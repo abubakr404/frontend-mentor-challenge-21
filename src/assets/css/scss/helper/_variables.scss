@@ -1,0 +1,19 @@
+$white: hsl(0, 0, 100%);
+
+$mainColor: hsl(212, 27%, 19%);
+$altColor: hsl(210, 4%, 67%);
+$pColor: hsl(232, 10%, 55%);
+$thirdColor: hsl(213, 9%, 39%);
+$red: hsl(7, 99%, 70%);
+$yellow: hsl(51, 100%, 49%);
+$footerColor: hsl(167, 44%, 70%);
+$altFooterColor: hsl(168, 34%, 41%);
+
+$fontFamilyG: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+$mainFont: "Barlow";
+$altFont: "Fraunces", serif;
+$fontFamily: $mainFont, $altFont, $fontFamilyG;
+
+$radius: 1.5rem;

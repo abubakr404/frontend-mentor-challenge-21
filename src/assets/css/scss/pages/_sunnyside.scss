@@ -1,0 +1,40 @@
+%transition {
+  transition: 0.3s;
+}
+%changeImg {
+  img.mobile {
+    @include showIn;
+  }
+  img.desktop {
+    @include hideIn;
+  }
+}
+%noContainer {
+  padding: 0;
+  margin: 0;
+  @include in(fromMedium) {
+    width: 100%;
+    @include responGridCol(31rem, 0);
+  }
+  img {
+    width: 100%;
+  }
+}
+%sectionPadding {
+  padding: {
+    top: 4rem;
+    bottom: 4rem;
+  }
+}
+section:not(.landing) {
+  max-width: 90rem;
+  margin: auto;
+}
+@import "../layout/header";
+@import "./components/about";
+@import "./components/landing";
+@import "./components/services";
+@import "./components/clients";
+@import "./components/portfolio";
+@import "./components/contact";
+@import "../layout/footer";

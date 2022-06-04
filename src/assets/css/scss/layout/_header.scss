@@ -1,0 +1,95 @@
+header {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  max-width: 90rem;
+  @include hPCenter;
+  .container {
+    position: relative;
+    padding: 2rem;
+    @include fSpacer;
+    @include maCoReset;
+  }
+  .links {
+    &:hover {
+      span:nth-of-type(2) {
+        width: 100%;
+      }
+    }
+    ul {
+      @include ulRest;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      @include in(toSmall) {
+        flex-direction: column;
+        position: absolute;
+        right: 2.5rem;
+        top: calc(100% + 0.75rem);
+        width: calc(100% - 4rem);
+        padding: {
+          top: 2rem;
+          bottom: 2rem;
+        }
+        background-color: $white;
+        &.hide {
+          display: none;
+        }
+        &::after {
+          @include triangleArrow(0.75rem, $white);
+        }
+      }
+      a {
+        display: block;
+        text-decoration: none;
+        font-size: 1.25rem;
+        padding: 0.7rem;
+        color: $white;
+        @extend %transition;
+        border-radius: 2rem;
+        @include in(toSmall) {
+          padding: 0;
+          color: $pColor;
+        }
+        &:hover {
+          color: $white;
+          background-color: hsl(200, 100%, 72%);
+        }
+        &.active {
+          @extend %altFont;
+          background-color: $white;
+          text-transform: uppercase;
+          padding: {
+            left: 2rem;
+            right: 2rem;
+          }
+          margin-left: 1rem;
+          color: $mainColor;
+          @include in(toSmall) {
+            margin-left: 0;
+            padding: {
+              top: 0.7rem;
+              bottom: 0.7rem;
+            }
+            background-color: $yellow;
+          }
+          &:hover {
+            color: $white;
+            background-color: hsl(200, 100%, 72%);
+          }
+        }
+      }
+      li {
+        padding: 0.3rem;
+      }
+    }
+    button {
+      display: none;
+      border: none;
+      background-color: transparent;
+      @include in(toSmall) {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.clients {
+  padding: {
+    bottom: 10rem;
+    top: 10rem;
+  }
+  @include in {
+    padding: {
+      bottom: 5rem;
+      top: 5rem;
+    }
+  }
+  h2 {
+    color: $altColor;
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+    font-weight: 800;
+    @include in {
+      letter-spacing: 0.3rem;
+      font-size: 1rem;
+    }
+  }
+  p {
+    color: $thirdColor;
+  }
+  .client-info {
+    p {
+      color: $altColor;
+      @include in {
+        font-size: small;
+      }
+    }
+  }
+  .container {
+    padding: 0;
+    @include responGridCol(20rem, 0.5rem);
+  }
+  .content {
+    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1.125rem;
+    gap: 4rem;
+    img {
+      max-width: 5rem;
+      filter: blur(0.25rem);
+      border-radius: 50%;
+      display: block;
+    }
+    @include in {
+      gap: 2rem;
+      padding: 0 2.5rem;
+      img {
+        max-width: 4rem;
+      }
+    }
+  }
+}

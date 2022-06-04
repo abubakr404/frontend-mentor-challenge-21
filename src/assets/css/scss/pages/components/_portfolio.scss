@@ -1,0 +1,16 @@
+.portfolio {
+  @extend %changeImg;
+  .container {
+    padding: 0;
+    margin: 0;
+    @include maCoReset;
+    width: 100%;
+    @include responGridCol(18.125rem, 0);
+    @include in {
+      @include responGridCol(10rem, 0);
+    }
+    img {
+      width: 100%;
+    }
+  }
+}

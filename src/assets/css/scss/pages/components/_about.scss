@@ -1,0 +1,72 @@
+.about {
+  @extend %changeImg;
+  text-align: start;
+  .container {
+    @extend %noContainer;
+    @include maCoReset;
+  }
+  .col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .content {
+      max-width: 36.5rem;
+      padding: 0 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2.5rem;
+      @include in(toSmall) {
+        align-items: center;
+        text-align: center;
+        h2 {
+          font-size: 2rem;
+        }
+        padding: 4rem 2.5rem;
+      }
+      button {
+        @include buttonRest($altFont);
+        text-transform: uppercase;
+        font: {
+          weight: 900;
+          size: 1rem;
+        }
+        letter-spacing: 0.05rem;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          z-index: -1;
+          width: 100%;
+          height: 0.5rem;
+          bottom: 0;
+          @include hPCenter;
+          border-radius: 1rem;
+          opacity: 0.3;
+          @extend %transition;
+        }
+        &:hover::after,
+        &:focus::after,
+        &:active::after {
+          opacity: 1;
+        }
+      }
+    }
+    &:nth-of-type(2) button::after {
+      background-color: $yellow;
+    }
+    &:nth-of-type(4) button::after {
+      background-color: $red;
+    }
+    h2 {
+      font-size: 2.6rem;
+      line-height: 1.2;
+    }
+    @include in(fromMedium) {
+      &:nth-of-type(2) {
+        order: -1;
+      }
+    }
+  }
+}

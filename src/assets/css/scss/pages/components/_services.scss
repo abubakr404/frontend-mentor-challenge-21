@@ -1,0 +1,46 @@
+.services {
+  @extend %changeImg;
+  .container {
+    @extend %noContainer;
+    @include maCoReset;
+  }
+  h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    text-transform: capitalize;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    .text {
+      padding: {
+        top: 4rem;
+        bottom: 4rem;
+      }
+      max-width: 24rem;
+      position: absolute;
+      bottom: 0;
+      @include in {
+        padding: {
+          left: 1.25rem;
+          right: 1.25rem;
+        }
+      }
+    }
+    &:first-of-type {
+      h2,
+      p {
+        color: hsl(167, 40%, 24%);
+      }
+    }
+    &:last-of-type {
+      h2,
+      p {
+        color: hsl(198, 62%, 26%);
+      }
+    }
+  }
+}
